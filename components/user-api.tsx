@@ -28,7 +28,7 @@ export default function UserApi() {
   return (
     <>
       <div className="grid w-full items-center gap-1.5">
-        <Label htmlFor="api">OpneAI Key</Label>
+        <Label htmlFor="api">Key</Label>
         <Input
           id="api"
           value={apiKey}
