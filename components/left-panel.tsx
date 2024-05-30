@@ -58,15 +58,39 @@ async function ConversationList() {
   return (
     <ScrollArea className="flex flex-col mt-7 items-start overflow-y-auto h-[90vh] pb-5">
       {conversations.map((cn) => (
-        <SheetClose asChild key={cn.id}>
-          <Link
-            href={`/chat/${cn.id}`}
-            className="w-full my-3 px-8 hover:underline underline-offset-2"
-          >
-            {cn.name.length > 35 ? cn.name.slice(0, 35) + "..." : cn.name}
-          </Link>
-        </SheetClose>
+        <div key={cn.id} className="group w-full my-3 px-8 flex justify-between items-center hover:bg-gray-100 rounded-md p-2">
+          <SheetClose asChild>
+            <Link
+              href={`/chat/${cn.id}`}
+              className="hover:underline underline-offset-2 flex-1"
+            >
+              {cn.name.length > 35 ? `${cn.name.slice(0, 35)}...` : cn.name}
+            </Link>
+          </SheetClose>
+          <div className="hidden group-hover:flex space-x-2">
+            <button
+              className="text-blue-500 hover:text-blue-700"
+            >
+              Save
+            </button>
+            <button
+              className="text-red-500 hover:text-red-700"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       ))}
     </ScrollArea>
   );
+}
+
+async function saveConversation(id: string) {
+  // Implement save logic here
+  console.log('Save conversation', id);
+}
+
+async function deleteConversation(id: string) {
+  // Implement delete logic here
+  console.log('Delete conversation', id);
 }

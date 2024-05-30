@@ -34,7 +34,14 @@
  
     --radius: 0.5rem;
   }
- 
+    /* Add these styles to your global CSS or Tailwind configuration if not already present */
+  .group:hover .group-hover\\:flex {
+    display: flex;
+  }
+  .group:hover .group-hover\\:hidden {
+    display: none;
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
